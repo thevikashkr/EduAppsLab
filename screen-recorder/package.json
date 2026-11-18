@@ -1,0 +1,44 @@
+{
+  "name": "edurecscreen-screen-recorder",
+  "version": "1.0.7",
+  "description": "EduRecScreen desktop screen recorder",
+  "main": "main.cjs",
+  "author": "Neha S (Edu Kumar Pvt Ltd.)",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test capture-permissions.test.cjs",
+    "dist:win": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^45.3.4",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.clearframe.recorder",
+    "productName": "EduRecScreen",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.cjs",
+      "capture-permissions.cjs",
+      "preload.cjs",
+      "index.html",
+      "styles.css",
+      "renderer.js",
+      "hero-background.svg",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "publish": null,
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
